@@ -338,3 +338,10 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Assets/Animation
+/Assets/Scenes
+/Assets/Sound
+/Assets/Sprites
+/Library
+/ProjectSettings
+/Temp
