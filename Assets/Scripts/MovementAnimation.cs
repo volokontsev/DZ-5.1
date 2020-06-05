@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Movement))]
 public class MovementAnimation : MonoBehaviour
 {
-    [SerializeField] private Movement _movement;
-    [SerializeField] private Animator _animator;
+    private Movement _movement;    
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _movement = GetComponent<Movement>();
+    }
 
     void Update()
     {

@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AlarmSystem : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private float _timeForMaxVolume;
+
+    private AudioSource _audioSource;
     private bool _robberInHouse;
     private float _stopwatch;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Robber>(out Robber robber))
+        {
             _audioSource.Play();
-        _robberInHouse = true;
+            _robberInHouse = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

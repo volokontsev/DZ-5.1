@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class Movement : MonoBehaviour
 {    
     [SerializeField] private float _movementSpeed;
-    [HideInInspector]public float CurentSpeed { get; private set; }
+
+    private float _curentSpeed;
+
+    public float CurentSpeed => _curentSpeed;
 
     private void Update()
     {
@@ -20,11 +23,11 @@ public class Movement : MonoBehaviour
             {
                 transform.Translate(_movementSpeed * Time.deltaTime, 0, 0);
             }
-            CurentSpeed = 1;
+            _curentSpeed = 1;
         }
         else
         {
-            CurentSpeed = 0;
+            _curentSpeed = 0;
         }       
     }
 }
