@@ -7,9 +7,9 @@ public class Movement : MonoBehaviour
 {    
     [SerializeField] private float _movementSpeed;
 
-    private float _curentSpeed;
+    private bool _isMoving;
 
-    public float CurentSpeed => _curentSpeed;
+    public bool IsMoving => _isMoving;
 
     private void Update()
     {
@@ -23,11 +23,11 @@ public class Movement : MonoBehaviour
             {
                 transform.Translate(_movementSpeed * Time.deltaTime, 0, 0);
             }
-            _curentSpeed = 1;
+            _isMoving = true;
         }
         else
         {
-            _curentSpeed = 0;
+            _isMoving = false;
         }       
     }
 }

@@ -17,7 +17,7 @@ public class MovementAnimation : MonoBehaviour
 
     void Update()
     {
-        if (_movement.CurentSpeed > 0)
+        if (_movement.IsMoving == true)
         {
             _animator.SetBool("WalkOn", true);
         }
